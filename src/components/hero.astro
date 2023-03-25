@@ -1,54 +1,74 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import heroImage from "assets/hero.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      aspectRatio="4:3"
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
-  </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+  class="grid place-items-center mt-8 pt-16 pb-8 md:pt-12 md:pb-16">
+  <style>
+    .dynamic-bg {
+      background-image: linear-gradient(90deg, #4fd1c5, #81e6d9, #4fd1c5);
+      background-size: 200% auto;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+      animation: dynamic-bg-gradient 4s ease infinite;
+    }
 
-        Download for Free
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
-      </Link>
-    </div>
+    @keyframes dynamic-bg-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .dynamic-text-color {
+    color: #ff4d4d;
+    animation: dynamic-text-color-gradient 4s ease infinite;
+  }
+
+  @keyframes dynamic-text-color-gradient {
+    0% {
+      color: #25de78;
+    }
+    50% {
+      color: #a733ff;
+    }
+    100% {
+      color: #ff4dbe;
+    }
+  }
+  </style>
+  <h1
+    class="md:mt-8 text-4xl lg:text-6xl xl:text-7xl font-bold xl:tracking-tighter text-gray-600">
+    ChatGPT For <span class="dynamic-text-color">WhatsApp</span>
+  </h1>
+  <p class="text-lg text-center mt-8 text-gray-900 max-w-xl">
+    Integrate ChatGPT into your favorite social platform and take your conversations to the next level.
+  </p>
+  <div class="mt-8 flex flex-col sm:flex-row gap-4">
+    <Link
+      href="#"
+      href="https://your-plugin-download-link.com"
+      target="_blank"
+      class="flex gap-1 items-center justify-center bg-emerald-600 hover:bg-emerald-500 rounded-lg text-white"
+      rel="noopener">
+      <Icon class="text-white w-5 h-5" name="bx:bxl-chrome" />
+      Add to Chrome
+    </Link>
+    <Link
+      size="lg"
+      rel="noopener"
+      href="https://github.com/your-username/your-plugin-repo"
+      class="flex gap-1 items-center justify-center bg-gray-200 text-emerald-500 rounded-lg hover:bg-emerald-100"
+      target="_blank">
+      <Icon class="text-emerald-500 w-5 h-5" name="bx:bxl-firefox" />
+      Add to Firefox
+    </Link>
   </div>
 </main>

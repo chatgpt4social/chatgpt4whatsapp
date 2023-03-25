@@ -5,23 +5,25 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "#" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-    ],
-  },
+  // {
+  //   title: "Product",
+  //   path: "#",
+  //   children: [
+  //     { title: "ChatGPT For WhatsApp", path: "#" },
+  //     { title: "ChatGPT For Messager", path: "#" },
+  //     { title: "ChatGPT For Telegram", path: "#" },
+  //     { title: "ChatGPT For Discord", path: "#" },
+  //     { title: "ChatGPT For Line", path: "#" },
+  //   ],
+  // },
   {
     title: "Pricing",
     path: "/pricing",
   },
-  {
-    title: "About",
-    path: "/about",
-  },
+  // {
+  //   title: "About",
+  //   path: "/about",
+  // },
   {
     title: "Blog",
     path: "/blog",
@@ -38,8 +40,9 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
+          ><span class="text-gray-900">ChatGPT</span><span
+            class="font-bold text-emerald-500">
+            For WhatsApp</span
           >
         </a>
         <div class="block lg:hidden">
@@ -63,7 +66,7 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 text-gray-900 hover:text-emerald-500 active:text-emerald-500">
                       {item.title}
                     </a>
                   </li>

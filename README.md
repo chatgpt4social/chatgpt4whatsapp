@@ -1,4 +1,4 @@
-# Astroship - Astro Starter Template 🛸
+# ChatGPT For Whatsapp - Plugin Website 🛸
 
 Astroship is a starter template for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
 

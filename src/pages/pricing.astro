@@ -6,16 +6,14 @@ import Pricing from "@components/pricing.astro";
 
 const pricing = [
   {
-    name: "Personal",
+    name: "Basic",
     price: "Free",
     popular: false,
     features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
+      "Supports ChatGPT",
+      "Supports API",
+      "API context",
+      "Switch models",
     ],
     button: {
       text: "Get Started",
@@ -23,21 +21,17 @@ const pricing = [
     },
   },
   {
-    name: "Startup",
+    name: "Plus",
     price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
+      monthly: "$5",
     },
     popular: true,
     features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
+      "Everything in Free, and",
+      "Define AI identity/role",
+      "One-click Bot takeover",
+      "Customizable frequency",
+      "Customizable queue",
     ],
     button: {
       text: "Get Started",
@@ -45,16 +39,17 @@ const pricing = [
     },
   },
   {
-    name: "Enterprise",
-    price: "Custom",
+    name: "Pro",
+    price: {
+      monthly: "$10",
+    },
     popular: false,
     features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
+      "Everything in Plus, and",
+      "Welcome message",
+      "Default Prompt",
+      "Custom proxy server",
+      "Customize other requirements",
     ],
     button: {
       text: "Contact us",
@@ -67,13 +62,10 @@ const pricing = [
 <Layout title="Pricing">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Pricing</Fragment>
-      <Fragment slot="desc"
-        >Simple & Predictable pricing. No Surprises.</Fragment
-      >
+      <Fragment slot="title">Get Started</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-3 gap-6 mx-auto max-w-screen-lg mt-24 rounded-lg">
       {pricing.map((item) => <Pricing plan={item} />)}
     </div>
   </Container>

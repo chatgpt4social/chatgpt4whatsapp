@@ -18,8 +18,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "ChatGPT For Wechat"
+  : "ChatGPT For Whatsapp - Plugin Website";
 ---
 
 <!DOCTYPE html>
@@ -32,23 +32,23 @@ const makeTitle = title
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
-      title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      title="ChatGPT For Whatsapp - Plugin Website"
+      description="ChatGPT For Whatsapp is a plugin that allows you to integrate ChatGPT into your WhatsApp conversations. Get quick and accurate responses to your messages with ChatGPT!"
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@your_twitter_handle",
+        site: "@your_website_handle",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: "Integrate ChatGPT with WhatsApp using our plugin",
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "ChatGPT For Whatsapp - Plugin Website Homepage Screenshot",
         },
       }}
     />
