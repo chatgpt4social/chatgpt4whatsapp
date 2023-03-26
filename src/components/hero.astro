@@ -6,48 +6,48 @@ import { Icon } from "astro-icon";
 <main
   class="grid place-items-center mt-8 pt-16 pb-8 md:pt-12 md:pb-16">
   <style>
-    .dynamic-bg {
-      background-image: linear-gradient(90deg, #4fd1c5, #81e6d9, #4fd1c5);
-      background-size: 200% auto;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 4px;
-      animation: dynamic-bg-gradient 4s ease infinite;
-    }
-
-    @keyframes dynamic-bg-gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .dynamic-text-color {
-    color: #ff4d4d;
-    animation: dynamic-text-color-gradient 4s ease infinite;
+     .primary-color {
+    background-color: #ff4dbe;
   }
+    .platform-name-container {
+      display: inline-block;
+      position: relative;
+    }
 
-  @keyframes dynamic-text-color-gradient {
-    0% {
-      color: #25de78;
+    .platform-name {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      white-space: nowrap;
     }
-    50% {
-      color: #a733ff;
+
+    .platform-name.visible {
+      opacity: 1;
     }
-    100% {
-      color: #ff4dbe;
-    }
+
+    .tag {
+    position: absolute;
+    top: 0;
+    left: 10;
+    font-size: 0.6rem;
+    border-radius: 4px;
+    margin-top: -10px;
   }
   </style>
-  <h1
-    class="md:mt-8 text-4xl lg:text-6xl xl:text-7xl font-bold xl:tracking-tighter text-gray-600">
-    ChatGPT For <span class="dynamic-text-color">WhatsApp</span>
-  </h1>
+  
+  <div class="heading-container grid grid-cols-2 items-baseline gap-x-4 md:mt-8 text-3xl lg:text-5xl xl:text-6xl font-bold xl:tracking-tighter mr-24">
+    <div class="text-gray-600">ChatGPT</div>
+    <div class="platform-name-container">
+      <span id="dynamic-text-0" class="visible mr-4 text-gray-600">For</span>
+      <span id="dynamic-text-1" class="platform-name">Social</span>
+      <span id="dynamic-text-2" class="platform-name">WhatsApp <button class="text-xs tag px-1 bg-green-600 rounded-sm text-white font-thin"> suported </button></span>
+      <span id="dynamic-text-3" class="platform-name">Telegram <button class="text-xs tag px-1 primary-color rounded-sm text-white font-thin"> coming </button></span>
+      <span id="dynamic-text-4" class="platform-name">Discord <button class="text-xs tag px-1 primary-color rounded-sm text-white font-thin" > await </button></span>
+      <span id="dynamic-text-5" class="platform-name">Line <button class="text-xs tag px-1 primary-color rounded-sm text-white font-thin"> await </button></span>
+      <span id="dynamic-text-6" class="platform-name">Twitter <button class="text-xs tag px-1 primary-color rounded-sm text-white font-thin"> await </button></span>
+      </div>
+  </div>
+
   <p class="text-lg text-center mt-8 text-gray-900 max-w-xl">
     Integrate ChatGPT into your favorite social platform and take your conversations to the next level.
   </p>
@@ -56,7 +56,7 @@ import { Icon } from "astro-icon";
       href="#"
       href="https://your-plugin-download-link.com"
       target="_blank"
-      class="flex gap-1 items-center justify-center bg-emerald-600 hover:bg-emerald-500 rounded-lg text-white"
+      class="flex gap-1 items-center justify-center bg-pink-500 hover:bg-pink-600 rounded-lg text-white"
       rel="noopener">
       <Icon class="text-white w-5 h-5" name="bx:bxl-chrome" />
       Add to Chrome
@@ -65,10 +65,24 @@ import { Icon } from "astro-icon";
       size="lg"
       rel="noopener"
       href="https://github.com/your-username/your-plugin-repo"
-      class="flex gap-1 items-center justify-center bg-gray-200 text-emerald-500 rounded-lg hover:bg-emerald-100"
+      class="flex gap-1 items-center justify-center bg-pink-100 text-pink-500 rounded-lg hover:bg-pink-200"
       target="_blank">
-      <Icon class="text-emerald-500 w-5 h-5" name="bx:bxl-firefox" />
+      <Icon class="text-pink-500 w-5 h-5" name="bx:bxl-firefox" />
       Add to Firefox
     </Link>
   </div>
 </main>
+
+<script>
+  const platformNames = ['For','Social', 'WhatsApp', 'Telegram', 'Discord', 'Line', 'Twitter'];
+  const colors = ['#4B5563', '#ff4dbe', '#25D366', '#0088cc', '#7289DA', '#00C300', '#1DA1F2'];
+  let currentIndex = 0;
+
+  setInterval(() => {
+    document.getElementById(`dynamic-text-${currentIndex}`).classList.remove('visible');
+    currentIndex = (currentIndex + 1) % platformNames.length;
+    const nextElement = document.getElementById(`dynamic-text-${currentIndex}`);
+    nextElement.classList.add('visible');
+    nextElement.style.color = colors[currentIndex];
+  }, 2000);
+</script>

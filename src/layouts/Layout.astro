@@ -19,7 +19,7 @@ const { title } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "ChatGPT For Wechat"
-  : "ChatGPT For Whatsapp - Plugin Website";
+  : "ChatGPT For Whatsapp - Integrate ChatGPT into your favorite social platform";
 ---
 
 <!DOCTYPE html>
@@ -32,26 +32,38 @@ const makeTitle = title
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
-      title="ChatGPT For Whatsapp - Plugin Website"
-      description="ChatGPT For Whatsapp is a plugin that allows you to integrate ChatGPT into your WhatsApp conversations. Get quick and accurate responses to your messages with ChatGPT!"
+      title="ChatGPT For Social - Integrate ChatGPT into your favorite social platform"
+      description="ChatGPT For Whatsapp is a extension that allows you to integrate ChatGPT into your WhatsApp conversations. Get quick and accurate responses to your messages with ChatGPT!"
       canonical={canonicalURL}
       twitter={{
-        creator: "@your_twitter_handle",
-        site: "@your_website_handle",
+        creator: "@AIFunFace",
+        site: "https://as-notion.vercel.com",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: "Integrate ChatGPT with WhatsApp using our plugin",
+          title: "Integrate ChatGPT with WhatsApp using our extension",
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "ChatGPT For Whatsapp - Plugin Website Homepage Screenshot",
+          alt: "ChatGPT For Whatsapp - Homepage Screenshot",
         },
       }}
     />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ84NX7M1H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TZ84NX7M1H");
+    </script>
   </head>
   <body>
     <Navbar />
