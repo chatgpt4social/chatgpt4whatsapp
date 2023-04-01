@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Error Codes and Troubleshooting Guide"
-snippet: "Welcome to the advanced tutorial on ChatGPT for WhatsApp. In this guide, we will dive into more complex and powerful features of the extension, helping you unlock its full potential and transform your messaging experience."
+snippet: "Welcome to the advanced tutorial on ChatGPT For Social. In this guide, we will dive into more complex and powerful features of the extension, helping you unlock its full potential and transform your messaging experience."
 image: {
     src: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?&fit=crop&w=430&h=240",
     alt: "full stack web development"

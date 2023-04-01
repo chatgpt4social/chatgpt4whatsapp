@@ -7,53 +7,58 @@ import Pricing from "@components/pricing.astro";
 const pricing = [
   {
     name: "Basic",
-    price: "Free",
+    price: "$5",
     popular: false,
     features: [
-      "Supports ChatGPT",
-      "Supports API",
+      "Support ChatGPT Web",
+      "Support ChatGPT API",
       "API context",
       "Switch models",
+      "Welcome message",
+      "30 day free trial",
     ],
     button: {
-      text: "Get Started",
-      link: "/",
+      text: "Free Trial",
+      link: "https://chrome.google.com/webstore/detail/chatgpt-for-whatsapp/ajlcjjeepijhfbgkciegfdoklpcpmipk",
     },
   },
   {
     name: "Plus",
     price: {
-      monthly: "$5",
+      monthly: "$12",
     },
     popular: true,
     features: [
       "Everything in Free, and",
       "Define AI identity/role",
       "One-click Bot takeover",
+      "Customize Default Prompt",
       "Customizable frequency",
       "Customizable queue",
+      "7 day free trial",
     ],
     button: {
       text: "Get Started",
-      link: "#",
+      link: "https://checkout.aoq.me",
     },
   },
   {
     name: "Pro",
     price: {
-      monthly: "$10",
+      monthly: "$20",
     },
     popular: false,
     features: [
       "Everything in Plus, and",
-      "Welcome message",
-      "Default Prompt",
+      "Support Bing Chat",
+      "Support Google Bart",
+      "Message rewrite",
       "Custom proxy server",
-      "Customize other requirements",
+      "7 day free trial",
     ],
     button: {
-      text: "Contact us",
-      link: "/contact",
+      text: "Get Started",
+      link: "https://checkout.aoq.me",
     },
   },
 ];
@@ -63,9 +68,11 @@ const pricing = [
   <Container>
     <Sectionhead>
       <Fragment slot="title">Get Started</Fragment>
+      <Fragment slot="desc">Plans to fit your needs</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-6 mx-auto max-w-screen-lg mt-24 rounded-lg">
+    <div
+      class="grid md:grid-cols-3 gap-6 mx-auto max-w-screen-lg mt-24 rounded-lg">
       {pricing.map((item) => <Pricing plan={item} />)}
     </div>
   </Container>
