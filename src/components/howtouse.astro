@@ -1,0 +1,74 @@
+---
+import { Picture } from "@astrojs/image/components";
+import showImage from "assets/show.png";
+---
+
+<section class="flex justify-center items-center bg-gray-50 mt-16 rounded-lg">
+  <div class="container mx-auto px-8">
+    <h1 class="text-4xl font-bold mb-8 text-center mt-8">How to Use</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <Picture
+          src={showImage}
+          alt="use chatgpt in whatsapp"
+          widths={[200, 300, 500]}
+          sizes="(max-width: 680px) 100vw, 520px"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+      <div class="space-y-4">
+        <div class="py-4">
+          <h2 class="text-xl font-semibold text-pink-500 mb-2">
+            Step 1. Install the extension
+          </h2>
+          <ul class="list-disc list-inside">
+            <li>
+              You can use the extension in your preferred browser (Chrome /
+              Firefox / Edge).
+            </li>
+          </ul>
+        </div>
+        <div class="py-4">
+          <h2 class="text-xl font-semibold text-pink-500 mb-2">
+            Step 2. Choose the AI source and log in
+          </h2>
+          <ul class="list-disc list-inside">
+            <li>
+              According to your needs, you can choose ChatGPT Web / ChatGPT API
+              / Bing Chat / Google Bard.
+            </li>
+            <li>
+              After selecting the AI source, make sure you are logged in to the
+              corresponding website.
+            </li>
+            <li>
+              For example, if you choose ChatGPT Web, you need to be logged in
+              to https://chat.openai.com.
+            </li>
+            <li>If you choose the API, you need to enter your API-Key.</li>
+          </ul>
+        </div>
+        <div class="py-4">
+          <h2 class="text-xl font-semibold text-pink-500 mb-2">
+            Step 3. Open WhatsApp Web and start chatting
+          </h2>
+          <ul class="list-disc list-inside">
+            <li>
+              Open WhatsApp Web on your computer and log in using the QR
+              code.
+            </li>
+            <li>
+              To use the AI in a private chat, type a message with "@gpt"
+              followed by your query. For example, type "@gpt tell me a joke".
+            </li>
+            <li>
+              In group chats, use "@botname hello" instead. The AI will
+              automatically generate a response based on your query.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
