@@ -23,7 +23,11 @@ const { plan } = Astro.props;
         }
       </p>
 
-      <p class="text-gray-500 text-sm pt-2">Per user/month</p>
+      {
+        plan.name === "Plus" || plan.name === "Pro" ? (
+          <p class="text-gray-500 text-sm pt-2">Per user/month</p>
+        ) : null
+      }
     </div>
     <ul class="grid mt-8 text-left gap-y-4">
       {
