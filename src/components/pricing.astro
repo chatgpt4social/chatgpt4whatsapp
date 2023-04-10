@@ -8,13 +8,13 @@ const { plan } = Astro.props;
 <div>
   <div
     class={`flex flex-col w-full order-first lg:order-none py-5 px-6 rounded-lg ${
-      plan.name === "Plus" ? "bg-pink-100" : "bg-gray-100"
-    } ${plan.name === "Plus" ? "transform -translate-y-5" : ""}`}>
+      plan.name === "Pro" ? "bg-pink-100" : "bg-gray-100"
+    } ${plan.name === "Pro" ? "transform -translate-y-5" : ""}`}>
     <div class="text-center">
       <h4 class="text-lg text-gray-400">{plan.name}</h4>
       <p
         class={`mt-4 text-4xl font-medium md:text-xl ${
-          plan.name === "Plus" ? "text-pink-500" : "text-gray-600"
+          plan.name === "Pro" ? "text-pink-500" : "text-gray-600"
         }`}>
         {
           plan.price && typeof plan.price === "object"
@@ -24,7 +24,7 @@ const { plan } = Astro.props;
       </p>
 
       {
-        plan.name === "Plus" || plan.name === "Pro" ? (
+        plan.name === "Pro" || plan.name === "Pro" ? (
           <p class="text-gray-500 text-sm pt-2">Per user/month</p>
         ) : null
       }
@@ -43,7 +43,7 @@ const { plan } = Astro.props;
       <Link
         href={plan.button.link || "#"}
         class={`py-2 px-4 rounded-lg focus:outline-none ${
-          plan.name === "Plus"
+          plan.name === "Pro"
             ? "bg-pink-500 text-white hover:bg-pink-500"
             : "bg-gray-300 text-gray-600 hover:bg-gray-200"
         }`}>
