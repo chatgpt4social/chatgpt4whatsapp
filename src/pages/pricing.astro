@@ -23,18 +23,19 @@ const pricing = [
     },
   },
   {
-    name: "Plus",
+    name: "Pro",
     price: {
-      monthly: "$8",
+      monthly: "CN¥100",
     },
     popular: true,
     features: [
       "Everything in Free, and",
       "Define AI identity/role",
       "Customize Default Prompt",
+      "Support Google Bart",
       "Customizable frequency",
       "Customizable queue",
-      "7 day free trial",
+      "1 day free trial",
     ],
     button: {
       text: "Get Started",
@@ -42,18 +43,18 @@ const pricing = [
     },
   },
   {
-    name: "Pro",
+    name: "Max",
     price: {
-      monthly: "$15",
+      monthly: "CN¥300",
     },
     popular: false,
     features: [
       "Everything in Plus, and",
       "Support Bing Chat",
-      "Support Google Bart",
+      "Switch multiple Bing Chat conversation models",
       "Message rewrite",
       "Custom proxy server",
-      "7 day free trial",
+      "1 day free trial",
     ],
     button: {
       text: "Get Started",
@@ -71,7 +72,7 @@ const pricing = [
     </Sectionhead>
 
     <div
-      class="grid md:grid-cols-3 gap-6 mx-auto max-w-screen-lg mt-24 rounded-lg">
+      class="grid md:grid-cols-3 gap-6 mx-auto max-w-screen-lg mt-16 rounded-lg">
       {pricing.map((item) => <Pricing plan={item} />)}
     </div>
   </Container>
